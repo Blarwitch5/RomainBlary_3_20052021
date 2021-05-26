@@ -16,97 +16,99 @@
   -moz-box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
 }
 
-
 /*------ Breakpoints -----*/
 @mixin breakpoint($breakpoint) {
-    @if $breakpoint == xl_desktop {
-      // > 1400 px
-      @media (min-width: 87.5rem) {
-        @content;
-      }
-    } @else if $breakpoint == l_desktop {
-      // > 1200 px
-      @media (min-width: 75rem) {
-        @content;
-      }
-    } @else if $breakpoint == laptop {
-      // > 992 px
-      @media (min-width: 62rem) {
-        @content;
-      }
-    } @else if $breakpoint == tablet {
-      // > 768 px
-      @media (min-width: 48rem) {
-        @content;
-      }
-    } @else if $breakpoint == phablet {
-      // > 576 px
-      @media (min-width: 36rem) {
-        @content;
-      }
-    } @else if $breakpoint == mobileonly {
-      // < 576 px
-      @media (max-width: 36rem) {
-        @content;
-      }
+  @if $breakpoint == xl_desktop {
+    // > 1400 px
+    @media (min-width: 87.5rem) {
+      @content;
+    }
+  } @else if $breakpoint == l_desktop {
+    // > 1200 px
+    @media (min-width: 75rem) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    // > 992 px
+    @media (min-width: 62rem) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    // > 768 px
+    @media (min-width: 48rem) {
+      @content;
+    }
+  } @else if $breakpoint == phablet {
+    // > 576 px
+    @media (min-width: 36rem) {
+      @content;
+    }
+  } @else if $breakpoint == mobileonly {
+    // < 576 px
+    @media (max-width: 36rem) {
+      @content;
     }
   }
-  
-  /*----- flex -----*/
-  @mixin flexbox {
-    display: -webkit-box; // old
-    display: -moz-box; // old
-    display: -ms-flexbox; // ie
-    display: -webkit-flex; // new
-    display: flex; // new
-  }
-  /*
+}
+/*
+@include breakpoint(value){
+}
+*/
+
+/*----- flex -----*/
+@mixin flexbox {
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox; // ie
+  display: -webkit-flex; // new
+  display: flex; // new
+}
+/*
    div {
       @include flexbox();
    }
    */
-  @mixin flex($values) {
-    -webkit-box-flex: $values;
-    -moz-box-flex: $values;
-    -ms-flex: $values;
-    -webkit-flex: $values;
-    flex: $values;
-  }
-  /*
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -ms-flex: $values;
+  -webkit-flex: $values;
+  flex: $values;
+}
+/*
   div {
       @include flex(1, 2);
   }
   */
-  @mixin flex-order($order) {
-    -webkit-box-ordinal-group: $order; // old
-    -moz-box-ordinal-group: $order; // old
-    -ms-flex-order: $order; // ie
-    -webkit-order: $order; // new
-    order: $order; // new
-  }
-  /*
+@mixin flex-order($order) {
+  -webkit-box-ordinal-group: $order; // old
+  -moz-box-ordinal-group: $order; // old
+  -ms-flex-order: $order; // ie
+  -webkit-order: $order; // new
+  order: $order; // new
+}
+/*
   div {
       @include flex-order(3);
   }
   */
-  @mixin flex-direction($direction) {
-    @if $direction == column {
-      -webkit-flex-direction: vertical;
-      -moz-flex-direction: vertical;
-      -ms-flex-direction: column;
-      -webkit-flex-direction: column;
-      flex-direction: column;
-    } @else {
-      -webkit-flex-direction: horizontal;
-      -moz-flex-direction: horizontal;
-      -ms-flex-direction: row;
-      -webkit-flex-direction: row;
-      flex-direction: row;
-    }
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  } @else {
+    -webkit-flex-direction: horizontal;
+    -moz-flex-direction: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
   }
-  /* 
+}
+/* 
    div {
       @include flex-direction(column);
   }
   */
-  
