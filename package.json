@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Création du site Ohmyfood! Paris",
   "main": "index.js",
-  "script": {
+  "scripts": {
     "sass": "sass ./sass/main.scss:./public/css/style.css -w --style expanded",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
