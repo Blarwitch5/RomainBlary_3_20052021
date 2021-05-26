@@ -4,6 +4,27 @@
  *
  * ========================================================================= */
 /*------ Breakpoints -----*/
+/*----- flex -----*/
+/*
+ div {
+    @include flexbox();
+ }
+ */
+/*
+div {
+    @include flex(1, 2);
+}
+*/
+/*
+div {
+    @include flex-order(3);
+}
+*/
+/* 
+ div {
+    @include flex-direction(column);
+}
+*/
 /* Box sizing rules */
 *,
 *::before,
