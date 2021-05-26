@@ -1,1 +1,22 @@
+/**
+ *
+ * HEADER STYLE
+ *
+ * ========================================================================= */
 
+.header{
+    background-color: #fff;
+    @include box-shadow;
+
+    h1{
+        @include txt-shrikhand;
+        font-size: 1.5rem;
+        line-height: 4rem;
+        text-align: center;
+
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}

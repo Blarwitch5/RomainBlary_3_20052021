@@ -1,0 +1,52 @@
+/**
+ *
+ * MIXINS
+ *
+ * ========================================================================= */
+
+@mixin txt-shrikhand {
+  font-family: "Shrikhand";
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin box-shadow {
+  box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
+}
+
+/*------ Breakpoints -----*/
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == xl_desktop {
+      // > 1400 px
+    @media (min-width: 87.5rem) {
+      @content;
+    }
+  } @else if $breakpoint == l_desktop {
+      // > 1200 px
+    @media (min-width: 75rem) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+      // > 992 px
+    @media (min-width: 62rem) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+      // > 768 px
+    @media (min-width: 48rem) {
+      @content;
+    }
+  } @else if $breakpoint == phablet {
+      // > 576 px
+    @media (min-width: 36rem) {
+      @content;
+    }
+  } @else if $breakpoint == mobileonly {
+      // < 576 px
+    @media (max-width: 36rem) {
+      @content;
+    }
+  }
+}
