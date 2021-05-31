@@ -3,6 +3,25 @@
  * MIXINS
  *
  * ========================================================================= */
+@mixin padding-h-10 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+@mixin padding-v-10 {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+@mixin padding-v-5 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+@mixin padding-vh-10 {
+    padding: 10%;
+  }
+@mixin margin-v-5 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 @mixin txt-shrikhand {
   font-family: "Shrikhand";
@@ -50,10 +69,7 @@
     }
   }
 }
-/*
-@include breakpoint(value){
-}
-*/
+/*----- @include breakpoint(value){} ------*/
 
 /*----- flex -----*/
 @mixin flexbox {
@@ -63,11 +79,7 @@
   display: -webkit-flex; // new
   display: flex; // new
 }
-/*
-   div {
-      @include flexbox();
-   }
-   */
+/*----- div{@include flexbox();} ------*/
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex: $values;
@@ -75,11 +87,7 @@
   -webkit-flex: $values;
   flex: $values;
 }
-/*
-  div {
-      @include flex(1, 2);
-  }
-  */
+/*----- div{@include flex(1, 2);} -----*/
 @mixin flex-order($order) {
   -webkit-box-ordinal-group: $order; // old
   -moz-box-ordinal-group: $order; // old
@@ -87,11 +95,7 @@
   -webkit-order: $order; // new
   order: $order; // new
 }
-/*
-  div {
-      @include flex-order(3);
-  }
-  */
+/*----- div{@include flex-order(3);} -----*/
 @mixin flex-direction($direction) {
   @if $direction == column {
     -webkit-flex-direction: vertical;
@@ -107,8 +111,33 @@
     flex-direction: row;
   }
 }
-/* 
-   div {
-      @include flex-direction(column);
+/*-----   div{@include flex-direction(column);} -----*/
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background-image: -moz-linear-gradient($orientation, $start-color 0%, $end-color 66%);
+  background-image: -webkit-linear-gradient($orientation, $start-color 0%, $end-color 66%);
+  background-image: linear-gradient($orientation, $start-color 0%, $end-color 66%);
+}
+
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
-  */
+}
+/*----- .result {@include center(both);} -----*/
