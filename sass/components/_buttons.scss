@@ -1,1 +1,36 @@
+@mixin gradient-btn {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  line-height: 3.125rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border: none;
+  border-radius: 1.563rem;
+  cursor: pointer;
+  background: $secondary;
+  @include gradient($secondary, $primary, 173deg);
 
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: $secondary;
+    @include gradient($primary, $secondary, 173deg);
+
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    border-radius: 1.563rem;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
