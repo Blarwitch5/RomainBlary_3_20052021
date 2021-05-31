@@ -28,7 +28,7 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
 
-  <body class=>
+  <body class="">
     <!-- Preloader animation -->
     <div class="preloader"></div>
     <!-- page header -->
@@ -39,9 +39,31 @@
     </header>
     <!-- page main content -->
     <main class="content">
+      <section class="booking">
+        <form class="booking__form">
+          <span><i class="fas fa-map-marker-alt"></i></span>
+          <input value="Paris, Belleville" placeholder="Rechercher un restaurant dans une zone" autofocus required />
+          <button type="submit" aria-label="Rechercher un restaurant dans une zone"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="booking__cta">
+          <h2>Réservez le menu qui vous convient</h2>
+          <h3>Découvrez des restaurants d'exception sélectionnés par nos soins</h3>
+          <button>Explorez nos restaurants</button>
+        </div>
+      </section>
       <section class="restaurants">
+        <h3>Restaurants</h3>
         <article class="restaurant">
-          <a href="menu-alafrancaise.html">à la française</a>
+          <a href="menu-alafrancaise.html">
+            <figure>
+              <span class="restaurant__new">Nouveau</span>
+              <img src="" class="restaurant__img" alt="Restaurant - À la française" />
+            </figure>
+            <div class="restaurant__description">
+              <h2 class="restaurant__name">à la française</h2>
+              <p class="restaurant__location">Ménilmontant</p>
+            </div>
+          </a>
         </article>
         <article class="restaurant">
           <a href="menu-lanoteenchantee.html">la note enchantée</a>
@@ -55,6 +77,22 @@
       </section>
     </main>
     <!-- page footer -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p class="footer__brand">ohmyfood</p>
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a href="#" class="footer__link"> <i class="fas fa-utensils"></i>Proposer un restaurant </a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link"> <i class="fas fa-hands-helping"></i>Devenir partenaire </a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link">Mentions légales</a>
+        </li>
+        <li class="footer__item">
+          <a href="mailto:contact@ohmyfood.fr" class="footer__link">Contact</a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
