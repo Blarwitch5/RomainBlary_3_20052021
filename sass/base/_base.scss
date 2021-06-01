@@ -36,7 +36,11 @@ dd {
 }
 
 html{
-  font-size: 16px;
+  font-size: 14px;
+
+  @include breakpoint(phablet){
+    font-size: 16px;
+  }
 }
 /* Set core body defaults */
 body {
