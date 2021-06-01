@@ -1,0 +1,169 @@
+.restaurants {
+  &__layout {
+    @include padding-h-10;
+    @include padding-v-5;
+
+    & > h3 {
+      width: 100%;
+    }
+
+    @include breakpoint(tablet) {
+      @include flexbox;
+      @include flex-flow(row wrap);
+      gap: 1rem;
+    }
+    @include breakpoint(laptop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2rem repeat(5, 1fr);
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+
+    .restaurant {
+      width: 100%;
+      margin: 1rem auto;
+      border-radius: 1rem;
+      @include box-shadow;
+
+      &__link {
+        text-decoration: none;
+    
+        &:hover {
+          & .restaurant__img {
+            &::after {
+              opacity: 0.2;
+            }
+            img {
+              transform: scale(1);
+            }
+          }
+    
+          & .restaurant__name {
+            color: $primary;
+          }
+        }
+      }
+      &__img {
+        position: relative;
+        z-index: 1;
+        max-height: 10rem;
+        overflow: hidden;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        transition: all 0.3s;
+    
+        @include breakpoint(laptop) {
+          height: 100%;
+        }
+    
+        &::after {
+          content: "";
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          color: #fff;
+          @include full-absolute-overlay;
+          background-image: linear-gradient(120deg, $secondary, $primary);
+          opacity: 0;
+          transition: all 0.3s;
+        }
+    
+        img {
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+          object-fit: cover;
+          width: 100%;
+          transform: scale(1.1);
+          transition: all 0.3s;
+        }
+    
+        & .restaurant__new {
+          background-color: $tertiary;
+          color: darken($tertiary, 40);
+          line-height: 1.875rem;
+          font-weight: 500;
+          padding: 0 1rem;
+          display: inline-block;
+          position: absolute;
+          right: 0.625rem;
+          top: 0.625rem;
+          z-index: 9;
+          border-radius: 0.188rem;
+        }
+      }
+      &__infogroup {
+        background-color: #fff;
+        padding: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        color: #000;
+        @include flexbox;
+        @include flex-flow(row nowrap);
+        @include justify-content(center);
+        @include align-items(center);
+    
+        & .restaurant__info {
+          @include flex-grow(1);
+    
+          & .restaurant__name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+          }
+          & .restaurant__location {
+            font-weight: 300;
+            font-size: 0.875rem;
+          }
+        }
+        & .restaurant__like {
+          svg {
+            width: 1.375rem;
+            height: 1.375rem;
+          }
+        }
+      }
+
+      @include breakpoint(tablet) {
+        width: calc(1 / 2 * 100% - 1rem);
+        margin: 0;
+      }
+      @include breakpoint(laptop) {
+        width: 100%;
+      }
+      &:first-child {
+        @include breakpoint(laptop) {
+          grid-area: 1 / 1 / 2 / 3;
+        }
+      }
+      &:nth-child(2) {
+        @include breakpoint(laptop) {
+          grid-area: 2 / 1 / 5 / 2;
+
+          & .restaurant__img {
+            max-height: 17.813rem;
+          }
+        }
+      }
+      &:nth-child(3) {
+        @include breakpoint(laptop) {
+          grid-area: 5 / 1 / 7 / 2;
+        }
+      }
+      &:nth-child(4) {
+        @include breakpoint(laptop) {
+          grid-area: 2 / 2 / 4 / 3;
+        }
+      }
+      &:nth-child(5) {
+        @include breakpoint(laptop) {
+          grid-area: 4 / 2 / 7 / 3;
+
+          & .restaurant__img {
+            max-height: 17.813rem;
+          }
+        }
+      }
+    }
+  }
+}

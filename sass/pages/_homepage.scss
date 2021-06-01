@@ -1,0 +1,75 @@
+.booking {
+  width: 100%;
+  margin: auto;
+  background-color: $bg-color-lighter;
+  padding-bottom: 5%;
+  text-align: center;
+
+  //PC version - 2/3 - 1/3
+
+  &__form {
+    text-align: center;
+    background-color: $bg-color;
+    @include padding-h-10;
+    line-height: 3.125rem;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    button {
+      display: none;
+      //button version desktop ?
+    }
+
+    & > span {
+      position: absolute;
+      top: 50%;
+      right: 80%;
+      transform: translate(-80%, -50%);
+
+      @include breakpoint(phablet) {
+        right: 70%;
+        transform: translate(-70%, -50%);
+      }
+      @include breakpoint(laptop) {
+        right: 63%;
+        transform: translate(-63%, -50%);
+      }
+    }
+
+    input {
+      width: 75%;
+      background-color: transparent;
+      border: none;
+      text-align: center;
+
+      @include breakpoint(phablet) {
+        width: 50%;
+      }
+      @include breakpoint(laptop) {
+        width: 33%;
+      }
+    }
+  }
+  &__cta {
+    @include padding-h-10;
+    padding-top: 5%;
+
+    & > button {
+      @include gradient-btn;
+      color: #fff;
+      margin: auto;
+      @include margin-v-5;
+    }
+
+    & > h2 {
+      font-weight: 700;
+    }
+    & > h3 {
+      font-weight: 300;
+    }
+  }
+}
+.restaurants {
+    background-color: $bg-color-lighter;
+}

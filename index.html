@@ -52,28 +52,68 @@
         </div>
       </section>
       <section class="restaurants">
-        <h3>Restaurants</h3>
-        <article class="restaurant">
-          <a href="menu-alafrancaise.html">
-            <figure>
-              <span class="restaurant__new">Nouveau</span>
-              <img src="" class="restaurant__img" alt="Restaurant - À la française" />
-            </figure>
-            <div class="restaurant__description">
-              <h2 class="restaurant__name">à la française</h2>
-              <p class="restaurant__location">Ménilmontant</p>
-            </div>
-          </a>
-        </article>
-        <article class="restaurant">
-          <a href="menu-lanoteenchantee.html">la note enchantée</a>
-        </article>
-        <article class="restaurant">
-          <a href="menu-lapalettedugout.html">la palette du goût</a>
-        </article>
-        <article class="restaurant">
-          <a href="menu-ledelicedessens.html">Le délice des sens</a>
-        </article>
+        <div class="container restaurants__layout">
+          <h3>Restaurants</h3>
+          <article class="restaurant">
+            <a class="restaurant__link" href="menu-lapalettedugout.html"
+              ><figure class="restaurant__img">
+                <span class="restaurant__new">Nouveau</span>
+                <img src="public/img/restaurants/small/la-palette-du-gout.jpg" alt="Restaurant - La palette du goût" />
+              </figure>
+              <div class="restaurant__infogroup">
+                <div class="restaurant__info">
+                  <h2 class="restaurant__name">La palette du goût</h2>
+                  <p class="restaurant__location">Ménilmontant</p>
+                </div>
+                <div class="restaurant__like"><i class="far fa-heart"></i></div>
+              </div>
+            </a>
+          </article>
+          <article class="restaurant">
+            <a class="restaurant__link" href="menu-lanoteenchantee.html"
+              ><figure class="restaurant__img">
+                <span class="restaurant__new">Nouveau</span>
+                <img src="public/img/restaurants/small/la-note-enchantee.jpg" alt="Restaurant - La note enchantée" />
+              </figure>
+              <div class="restaurant__infogroup">
+                <div class="restaurant__info">
+                  <h2 class="restaurant__name">La note enchantée</h2>
+                  <p class="restaurant__location">Charonne</p>
+                </div>
+                <div class="restaurant__like"><i class="far fa-heart"></i></div>
+              </div>
+            </a>
+          </article>
+          <article class="restaurant">
+            <a class="restaurant__link" href="menu-alafrancaise.html">
+              <figure class="restaurant__img">
+                <img src="public/img/restaurants/small/a-la-française.jpg" alt="Restaurant - À la française" />
+                <div class="restaurant__overlay"></div>
+              </figure>
+              <div class="restaurant__infogroup">
+                <div class="restaurant__info">
+                  <h2 class="restaurant__name">À la française</h2>
+                  <p class="restaurant__location">Cité Rouge</p>
+                </div>
+                <div class="restaurant__like"><i class="far fa-heart"></i></div>
+              </div>
+            </a>
+          </article>
+          <article class="restaurant">
+            <a class="restaurant__link" href="menu-ledelicedessens.html">
+              <figure class="restaurant__img">
+                <img src="public/img/restaurants/small/le-delice-des-sens.jpg"  alt="Restaurant - Le délice des sens" />
+              </figure>
+              <div class="restaurant__infogroup">
+                <div class="restaurant__info">
+                  <h2 class="restaurant__name">Le délice des sens</h2>
+                  <p class="restaurant__location">Folie-Méricourt</p>
+                </div>
+                <div class="restaurant__like"><i class="far fa-heart"></i></div>
+              </div>
+            </a>
+          </article>
+        </div>
       </section>
     </main>
     <!-- page footer -->
