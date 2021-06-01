@@ -5,11 +5,28 @@
  * ========================================================================= */
 
 .header {
-  background-color: #fff;
+  background-color: $white;
   position: relative;
   z-index: 9;
   @include box-shadow;
   @include padding-h-10;
+
+  &__back-btn {
+    @include center(vertical);
+    left: 10%;
+    a {
+      text-decoration: none;
+      color: $black;
+      position: relative;
+      left: 0;
+      transition: left ease 0.1s;
+      
+      &:hover {
+        left: -0.2rem;
+      }
+    }
+  }
+
   h1 {
     @include txt-shrikhand;
     font-size: 1.5rem;
@@ -18,7 +35,7 @@
 
     a {
       text-decoration: none;
-      color: #000;
+      color: $black;
     }
   }
 }
