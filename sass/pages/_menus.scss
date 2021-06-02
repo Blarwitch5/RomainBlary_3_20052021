@@ -1,0 +1,153 @@
+/**
+ *
+ * MENU PAGE
+ *
+ * ========================================================================= */
+
+.hero {
+  height: 15.938rem;
+  background: url("../../public/img/restaurants/small/a-la-française.jpg") no-repeat center center;
+  object-fit: cover;
+  @include flexbox;
+  @include align-items(flex-end);
+  margin-bottom: -1px;
+
+  &__page-title {
+    @include flexbox;
+    @include flex-flow(row nowrap);
+    @include align-items(center);
+    width: 100%;
+    background-color: $bg-color-lighter;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5%;
+    padding-right: 10%;
+
+    .hero__title {
+      @include flex-grow(1);
+      @include txt-shrikhand;
+      line-height: 3rem;
+    }
+    .hero__like {
+      font-size: 1.5rem;
+      svg{
+          path{
+              @include iconHeart;
+          }
+      }
+    }
+  }
+}
+.menu {
+  background-color: $bg-color-lighter;
+  padding-bottom: 5%;
+  @include padding-h-5;
+
+  h2 {
+    position: relative;
+    line-height: 1.5rem;
+    padding-bottom: 1.625rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 2rem;
+      height: 0;
+      width: 3.125rem;
+      content: "";
+      border-top: 3px solid $tertiary;
+    }
+  }
+  .starter,
+  .main-course,
+  .dessert {
+    border-radius: 1.25rem;
+    background-color: $white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    @include box-shadow;
+    @include flexbox;
+    @include flex-flow(row nowrap);
+    position: relative;
+    animation: coursesAppearance 800ms ease-in-out forwards;
+    opacity: 0;
+    overflow: hidden;
+
+    &:nth-child(2) {
+      animation-delay: 200ms;
+    }
+    &:nth-child(3) {
+      animation-delay: 400ms;
+    }
+    &:nth-child(4) {
+      animation-delay: 600ms;
+    }
+    &:nth-child(5) {
+      animation-delay: 800ms;
+    }
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+
+    &__details {
+      @include flex-grow(1);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &__ingredients {
+      font-weight: 300;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__name {
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__price {
+      @include flexbox;
+      span {
+        @include align-self(flex-end);
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  &__order {
+    text-align: center;
+    button {
+      @include gradient-btn;
+      margin: 0 auto 3rem;
+    }
+  }
+  &__validation {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    height: 100%;
+    width: 20%;
+    background-color: $tertiary;
+    opacity: 0;
+
+    svg {
+      background-color: $white;
+      border-radius: 1rem;
+      color: $tertiary;
+      font-size: 1.5rem;
+    }
+  }
+  &:hover {
+    transition: all 0.5s ease-in;
+
+    &__validation {
+      left: 80%;
+      opacity: 1;
+    }
+  }
+}

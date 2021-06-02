@@ -5,11 +5,11 @@
  * ========================================================================= */
 .restaurants {
   &__layout {
-    @include padding-h-10;
     @include padding-v-5;
 
     & > h3 {
       width: 100%;
+      @include title(700, 3.75rem, 1.125rem);
     }
 
     @include breakpoint(tablet) {
@@ -20,7 +20,7 @@
     @include breakpoint(laptop) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 2rem repeat(5, 1fr);
+      grid-template-rows: 3rem repeat(5, 1fr);
       grid-column-gap: 1rem;
       grid-row-gap: 1rem;
     }
@@ -28,12 +28,12 @@
     .restaurant {
       width: 100%;
       margin: 1rem auto;
-      border-radius: 1rem;
+      @include border-radius-all;
       @include box-shadow;
 
       &__link {
         text-decoration: none;
-    
+
         &:hover {
           & .restaurant__img {
             &::after {
@@ -43,7 +43,7 @@
               transform: scale(1);
             }
           }
-    
+
           & .restaurant__name {
             color: $primary;
           }
@@ -57,23 +57,23 @@
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         transition: all 0.3s;
-    
+
         @include breakpoint(laptop) {
           height: 100%;
         }
-    
+
         &::after {
           content: "";
           @include flexbox;
           @include align-items(center);
           @include justify-content(center);
-          color: #fff;
+          color: $white;
           @include full-absolute-overlay;
           background-image: linear-gradient(120deg, $secondary, $primary);
           opacity: 0;
           transition: all 0.3s;
         }
-    
+
         img {
           border-top-left-radius: 1rem;
           border-top-right-radius: 1rem;
@@ -82,7 +82,7 @@
           transform: scale(1.1);
           transition: all 0.3s;
         }
-    
+
         & .restaurant__new {
           background-color: $tertiary;
           color: darken($tertiary, 40);
@@ -98,19 +98,19 @@
         }
       }
       &__infogroup {
-        background-color: #fff;
+        background-color: $white;
         padding: 1rem;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        color: #000;
+        color: $black;
         @include flexbox;
         @include flex-flow(row nowrap);
         @include justify-content(center);
         @include align-items(center);
-    
+
         & .restaurant__info {
           @include flex-grow(1);
-    
+
           & .restaurant__name {
             font-weight: 600;
             font-size: 0.875rem;
@@ -125,6 +125,10 @@
           svg {
             width: 1.375rem;
             height: 1.375rem;
+
+            path {
+              @include iconHeart;
+            }
           }
         }
       }
