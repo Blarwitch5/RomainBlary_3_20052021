@@ -1,0 +1,92 @@
+/**
+ *
+ * PRELOADER STYLE
+ *
+ * ========================================================================= */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes preloader {
+  0% {
+    background-position: 100% 50%;
+  }
+  17% {
+    background-position: 82% 50%;
+  }
+  24% {
+    background-position: 60% 50%;
+  }
+  46% {
+    background-position: 20% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.preloader {
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 4.8s;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: radial-gradient(circle, rgba(234, 234, 234, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(234, 234, 234, 1) 100%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-image: url("../../public/img/ohmyfood-bg.svg");
+    background-position: center center;
+    opacity: 0.02;
+    background-size: 80%;
+  }
+
+  &__text {
+    font-size: 2rem;
+    @include center(both);
+    width: fit-content;
+    @include txt-shrikhand;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    animation: preloader 6s;
+    color: $black;
+    background: linear-gradient(to right, $secondary, $primary 50%, $black 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-size: 200% 100%;
+    background-position: 100%;
+
+    @include breakpoint(phablet) {
+      font-size: 3rem;
+    }
+    @include breakpoint(tablet) {
+      font-size: 4rem;
+    }
+    @include breakpoint(laptop) {
+      font-size: 6rem;
+    }
+    @include breakpoint(l_desktop) {
+      font-size: 8rem;
+    }
+    @include breakpoint(xl_desktop) {
+      font-size: 10rem;
+    }
+  }
+}

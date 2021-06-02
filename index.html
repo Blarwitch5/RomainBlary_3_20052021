@@ -25,12 +25,14 @@
     <link rel="manifest" href="public/img/favicon/site.webmanifest" />
     <link rel="mask-icon" href="public/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#9356dc" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="$whitefff" />
   </head>
 
-  <body class="">
+  <body>
     <!-- Preloader animation -->
-    <div class="preloader">ohmyfood</div>
+    <div class="preloader">
+      <div class="preloader__text" data-content="ohmyfood ...">ohmyfood ...</div>
+    </div>
     <!-- page header -->
     <header class="header">
       <h1>
@@ -51,8 +53,24 @@
           <div class="booking__cta">
             <h2>Réservez le menu qui vous convient</h2>
             <h3>Découvrez des restaurants d'exception sélectionnés par nos soins</h3>
-            <button>Explorez nos restaurants</button>
+            <button type="submit">Explorez nos restaurants</button>
           </div>
+        </div>
+      </section>
+      <section class="process">
+        <div class="container">
+          <h3>Fonctionnement</h3>
+          <ul class="process__list">
+            <li class="process__item">
+              <span class="process__icon"><i class="fas fa-mobile-alt"></i></span> Choisissez un restaurant
+            </li>
+            <li class="process__item">
+              <span class="process__icon"><i class="fas fa-list-ul"></i></span>Composez votre menu
+            </li>
+            <li class="process__item">
+              <span class="process__icon"><i class="fas fa-store"></i></span>Dégustez au restaurant
+            </li>
+          </ul>
         </div>
       </section>
       <section class="restaurants">
