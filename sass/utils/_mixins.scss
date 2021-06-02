@@ -3,7 +3,11 @@
  * MIXINS
  *
  * ========================================================================= */
-@mixin padding-h-10 {
+ @mixin padding-h-5 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+ @mixin padding-h-10 {
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -45,6 +49,7 @@
 @mixin transition($property){
     transition: $property 0.3s ease-in;
 }
+
 /*------ Breakpoints -----*/
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == xl_desktop {
@@ -128,7 +133,6 @@
     row nowrap,
   )
 ) {
-  // No Webkit/FF Box fallback.
   flex-flow: $values;
 }
 
