@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  *
  * VARIABLES
@@ -11,6 +12,61 @@
 /*------ Breakpoints -----*/
 /*----- @include breakpoint(value){} ------*/
 /*----- .result {@include center(both);} -----*/
+/**
+ *
+ * KEYFRAMES
+ *
+ * ========================================================================= */
+@keyframes coursesAppearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes preloader {
+  0% {
+    background-position: 100% 50%;
+  }
+  17% {
+    background-position: 82% 50%;
+  }
+  24% {
+    background-position: 60% 50%;
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    background-position: 20% 50%;
+    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes iconHeart {
+  0% {
+    fill: transparent;
+    stroke-width: 10%;
+  }
+  50% {
+    fill: #9356dc;
+    stroke: 0%;
+  }
+  100% {
+    fill: #ff79da;
+    stroke: 0%;
+  }
+}
 /**
  *
  * BASE STYLE
@@ -48,7 +104,12 @@ dd {
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
+}
+@media (min-width: 36rem) {
+  html {
+    font-size: 16px;
+  }
 }
 
 /* Set core body defaults */
@@ -204,28 +265,10 @@ select {
  * PRELOADER STYLE
  *
  * ========================================================================= */
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes preloader {
-  0% {
-    clip-path: ellipse(6.25rem 6.25rem at -5% 50%);
-  }
-  50% {
-    clip-path: ellipse(6.25rem 6.25rem at 50% 50%);
-  }
-  100% {
-    clip-path: ellipse(6.25rem 6.25rem at 105% 50%);
-  }
-}
 .preloader {
-  animation: fade Out 1s ease;
-  animation-delay: 5s;
+  display: none;
+  animation: fadeOut 1s ease 150ms forwards;
+  animation-delay: 6s;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -234,28 +277,68 @@ select {
   z-index: 9999;
   background: radial-gradient(circle, #eaeaea 0%, white 50%, #eaeaea 100%);
 }
+.preloader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-image: url("../../public/img/ohmyfood-bg.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.02;
+  background-size: 65%;
+}
 .preloader__text {
-  font-size: 10rem;
-  height: 100%;
-  width: 100%;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
   font-family: "Shrikhand";
   font-style: normal;
   font-weight: 400;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: preloader 5s ease-in-out;
-  position: relative;
+  animation: preloader 6s;
   color: #000;
+  background: linear-gradient(to right, #ff79da, #9356dc 50%, #000 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-size: 200% 100%;
+  background-position: 100%;
 }
-.preloader__text::before {
-  content: attr(data-text);
-  position: absolute;
-  background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
-  color: transparent;
-  background-size: 100% 90%;
-  clip-path: ellipse(6.25rem 6.25rem at -2.54% -9.25%);
-  animation: preloader 5s ease;
+@media (min-width: 36rem) {
+  .preloader__text {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 48rem) {
+  .preloader__text {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 62rem) {
+  .preloader__text {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 75rem) {
+  .preloader__text {
+    font-size: 8rem;
+  }
+}
+@media (min-width: 87.5rem) {
+  .preloader__text {
+    font-size: 10rem;
+  }
 }
 
 /**
@@ -268,8 +351,24 @@ select {
   position: relative;
   z-index: 9;
   box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.header__back-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+}
+.header__back-btn a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  left: 0;
+  transition: left ease 0.1s;
+}
+.header__back-btn a:hover {
+  left: -0.2rem;
 }
 .header h1 {
   font-family: "Shrikhand";
@@ -327,6 +426,10 @@ select {
   padding-left: 1.875rem;
   position: relative;
   font-weight: 300;
+  transition: color 0.3s ease-in;
+}
+.footer__list .footer__item .footer__link:hover {
+  color: #ff79da;
 }
 .footer__list .footer__item .footer__link svg {
   position: absolute;
@@ -499,9 +602,21 @@ select {
   font-weight: 300;
   font-size: 0.875rem;
 }
+.restaurants__layout .restaurant__infogroup .restaurant__like {
+  cursor: pointer;
+}
 .restaurants__layout .restaurant__infogroup .restaurant__like svg {
   width: 1.375rem;
   height: 1.375rem;
+}
+.restaurants__layout .restaurant__infogroup .restaurant__like svg path {
+  stroke-width: 10%;
+  stroke: #000;
+  fill: transparent;
+}
+.restaurants__layout .restaurant__infogroup .restaurant__like svg path:hover {
+  stroke-width: 0%;
+  animation: iconHeart 500ms forwards;
 }
 @media (min-width: 48rem) {
   .restaurants__layout .restaurant {
@@ -730,5 +845,199 @@ select {
  * MENU PAGE
  *
  * ========================================================================= */
+.hero {
+  height: 15.938rem;
+  background: url("../../public/img/restaurants/small/a-la-française.jpg") no-repeat center center;
+  object-fit: cover;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: -1px;
+}
+.hero__page-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 5%;
+  padding-right: 10%;
+}
+.hero__page-title .hero__title {
+  flex-grow: 1;
+  font-family: "Shrikhand";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+}
+.hero__page-title .hero__like {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.hero__page-title .hero__like svg path {
+  stroke-width: 10%;
+  stroke: #000;
+  fill: transparent;
+}
+.hero__page-title .hero__like svg path:hover {
+  stroke-width: 0%;
+  animation: iconHeart 500ms forwards;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.menu h2 {
+  position: relative;
+  line-height: 1.5rem;
+  padding-bottom: 1.625rem;
+}
+.menu h2::before {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  height: 0;
+  width: 3.125rem;
+  content: "";
+  border-top: 3px solid #99e2d0;
+}
+.menu .starter,
+.menu .main-course,
+.menu .dessert {
+  border-radius: 1.25rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+  animation: coursesAppearance 800ms ease-in-out forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+.menu .starter:nth-child(2),
+.menu .main-course:nth-child(2),
+.menu .dessert:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menu .starter:nth-child(3),
+.menu .main-course:nth-child(3),
+.menu .dessert:nth-child(3) {
+  animation-delay: 400ms;
+}
+.menu .starter:nth-child(4),
+.menu .main-course:nth-child(4),
+.menu .dessert:nth-child(4) {
+  animation-delay: 600ms;
+}
+.menu .starter:nth-child(5),
+.menu .main-course:nth-child(5),
+.menu .dessert:nth-child(5) {
+  animation-delay: 800ms;
+}
+.menu .starter:last-child,
+.menu .main-course:last-child,
+.menu .dessert:last-child {
+  margin-bottom: 3rem;
+}
+.menu .starter__details,
+.menu .main-course__details,
+.menu .dessert__details {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu .starter__ingredients,
+.menu .main-course__ingredients,
+.menu .dessert__ingredients {
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .starter__name,
+.menu .main-course__name,
+.menu .dessert__name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .starter__price,
+.menu .main-course__price,
+.menu .dessert__price {
+  display: flex;
+}
+.menu .starter__price span,
+.menu .main-course__price span,
+.menu .dessert__price span {
+  align-self: flex-end;
+  padding-left: 1rem;
+}
+.menu__order {
+  text-align: center;
+}
+.menu__order button {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  line-height: 3.125rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border: none;
+  border-radius: 1.563rem;
+  cursor: pointer;
+  background: #ff79da;
+  background-image: linear-gradient(173deg, #ff79da 0%, #9356dc 66%);
+  margin: 0 auto 3rem;
+}
+.menu__order button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: #ff79da;
+  background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
+  z-index: -1;
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+  border-radius: 1.563rem;
+}
+.menu__order button:hover::before, .menu__order button:focus::before, .menu__order button:active::before {
+  opacity: 1;
+}
+.menu__validation {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 20%;
+  background-color: #99e2d0;
+  opacity: 0;
+}
+.menu__validation svg {
+  background-color: #fff;
+  border-radius: 1rem;
+  color: #99e2d0;
+  font-size: 1.5rem;
+}
+.menu:hover {
+  transition: all 0.5s ease-in;
+}
+.menu:hover__validation {
+  left: 80%;
+  opacity: 1;
+}
 
 /*# sourceMappingURL=style.css.map */

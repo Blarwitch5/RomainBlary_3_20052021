@@ -39,6 +39,11 @@
         padding-left: 1.875rem;
         position: relative;
         font-weight: 300;
+        @include transition(color);
+
+        &:hover {
+          color: $secondary;
+        }
 
         svg {
           @include center(vertical);
