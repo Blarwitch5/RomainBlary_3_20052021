@@ -6,7 +6,7 @@
 @mixin gradient-btn {
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: $white;
   line-height: 3.125rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
