@@ -10,7 +10,7 @@
 
   &__brand {
     @include txt-shrikhand;
-    color: #fff;
+    color: $white;
     line-height: 3.125rem;
 
     @include breakpoint(tablet) {
@@ -18,13 +18,12 @@
       list-style: 5rem;
       text-align: center;
       margin-bottom: 1rem;
-
     }
   }
   &__list {
     @include breakpoint(tablet) {
-        text-align: center;
-      }
+      text-align: center;
+    }
     & .footer__item {
       &:nth-child(3),
       &:nth-child(4) {
@@ -33,7 +32,7 @@
         }
       }
       & .footer__link {
-        color: #fff;
+        color: $white;
         font-size: 0.875rem;
         line-height: 1.625rem;
         text-decoration: none;
