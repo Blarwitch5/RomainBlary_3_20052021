@@ -84,6 +84,16 @@
     }
   }
 }
+@mixin iconHeart{
+    stroke-width: 10%;
+    stroke: $black;
+    fill: transparent;
+
+    &:hover{
+        stroke-width: 0%;
+        animation: iconHeart 500ms forwards;
+    }
+}
 /*----- @include breakpoint(value){} ------*/
 
 //---------------------------------------------------------------//
