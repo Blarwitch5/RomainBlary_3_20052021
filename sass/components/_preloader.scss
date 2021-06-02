@@ -9,6 +9,7 @@
   }
   100% {
     opacity: 0;
+    z-index: 0;
   }
 }
 
@@ -30,6 +31,8 @@
   }
 }
 .preloader {
+  display: none;
+  //desactivation temporaire pour prod
   animation: fadeOut 1s ease forwards;
   animation-delay: 4.8s;
   position: fixed;
