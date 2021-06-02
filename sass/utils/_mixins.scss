@@ -3,11 +3,11 @@
  * MIXINS
  *
  * ========================================================================= */
- @mixin padding-h-5 {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
- @mixin padding-h-10 {
+@mixin padding-h-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+@mixin padding-h-10 {
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -34,20 +34,23 @@
 }
 
 @mixin title($weight, $line-height, $font-size) {
-        font-weight: $weight;
-        line-height: $line-height;
-        font-size: $font-size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-size: $font-size;
 }
 
 @mixin box-shadow {
   box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
 }
-
-@mixin border-radius-all{
-    border-radius: 1rem;
+@mixin box-shadow-reverse {
+  box-shadow: 0px -5px 11px -6px rgba(0, 0, 0, 0.5);
 }
-@mixin transition($property){
-    transition: $property 0.3s ease-in;
+
+@mixin border-radius-all {
+  border-radius: 1rem;
+}
+@mixin transition($property) {
+  transition: $property 0.3s ease-in;
 }
 
 /*------ Breakpoints -----*/
@@ -84,15 +87,18 @@
     }
   }
 }
-@mixin iconHeart{
-    stroke-width: 10%;
-    stroke: $black;
-    fill: transparent;
+@mixin iconHeart {
+  stroke-width: 10%;
+  stroke: $black;
+  fill: transparent;
 
-    &:hover{
-        stroke-width: 0%;
-        animation: iconHeart 500ms forwards;
-    }
+  &:hover {
+    stroke-width: 0%;
+    animation: iconHeart 500ms forwards;
+  }
+}
+@mixin heroImg($imgUrl, $verticalAlign) {
+  background: url($imgUrl) no-repeat $verticalAlign center;
 }
 /*----- @include breakpoint(value){} ------*/
 
@@ -206,10 +212,10 @@
   }
 }
 /*----- .result {@include center(both);} -----*/
-@mixin full-absolute-overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+@mixin full-absolute-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

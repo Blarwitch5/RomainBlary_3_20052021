@@ -3,14 +3,77 @@
  * MENU PAGE
  *
  * ========================================================================= */
+.page-menu-alafrancaise {
+  .hero {
+    @include heroImg("../../public/img/restaurants/small/a-la-francaise.jpg", top);
 
+    @include breakpoint(phablet) {
+      @include heroImg("../../public/img/restaurants/medium/a-la-francaise-md.jpg", center);
+    }
+    @include breakpoint(tablet) {
+      @include heroImg("../../public/img/restaurants/large/a-la-francaise-lg.jpg", center);
+    }
+    @include breakpoint(l_desktop) {
+      @include heroImg("../../public/img/restaurants/xlarge/a-la-francaise-xl.jpg", center);
+    }
+  }
+}
+.page-menu-lapalettedugout {
+  .hero {
+    @include heroImg("../../public/img/restaurants/small/la-palette-du-gout.jpg", top);
+
+    @include breakpoint(phablet) {
+      @include heroImg("../../public/img/restaurants/medium/la-palette-du-gout-md.jpg", center);
+    }
+    @include breakpoint(tablet) {
+      @include heroImg("../../public/img/restaurants/large/la-palette-du-gout-lg.jpg", center);
+    }
+    @include breakpoint(l_desktop) {
+      @include heroImg("../../public/img/restaurants/xlarge/la-palette-du-gout-xl.jpg", center);
+    }
+  }
+}
+.page-menu-lanoteenchantee {
+  .hero {
+    @include heroImg("../../public/img/restaurants/small/la-note-enchantee.jpg", top);
+
+    @include breakpoint(phablet) {
+      @include heroImg("../../public/img/restaurants/medium/la-note-enchantee-md.jpg", center);
+    }
+    @include breakpoint(tablet) {
+      @include heroImg("../../public/img/restaurants/large/la-note-enchantee-lg.jpg", center);
+    }
+    @include breakpoint(l_desktop) {
+      @include heroImg("../../public/img/restaurants/xlarge/la-note-enchantee-xl.jpg", center);
+    }
+  }
+}
+.page-menu-ledelicedessens {
+  .hero {
+    @include heroImg("../../public/img/restaurants/small/le-delice-des-sens.jpg", top);
+
+    @include breakpoint(phablet) {
+      @include heroImg("../../public/img/restaurants/medium/le-delice-des-sens-md.jpg", bottom);
+    }
+    @include breakpoint(tablet) {
+      @include heroImg("../../public/img/restaurants/large/le-delice-des-sens-lg.jpg", bottom);
+    }
+    @include breakpoint(l_desktop) {
+      @include heroImg("../../public/img/restaurants/xlarge/le-delice-des-sens-xl.jpg", bottom);
+    }
+  }
+}
 .hero {
-  height: 15.938rem;
-  background: url("../../public/img/restaurants/small/a-la-française.jpg") no-repeat center center;
+  height: 18.75rem;
   object-fit: cover;
   @include flexbox;
   @include align-items(flex-end);
   margin-bottom: -1px;
+  background-size: 100% !important;
+
+  @include breakpoint(mobileonly) {
+    background-size: 105% !important;
+  }
 
   &__page-title {
     @include flexbox;
@@ -21,9 +84,17 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     padding-top: 2rem;
-    padding-bottom: 2rem;
     padding-left: 5%;
     padding-right: 10%;
+
+    @include breakpoint(tablet) {
+      width: 50%;
+      padding-right: 5%;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin: 0 auto;
+      @include box-shadow-reverse;
+    }
 
     .hero__title {
       @include flex-grow(1);
@@ -32,18 +103,22 @@
     }
     .hero__like {
       font-size: 1.5rem;
-      svg{
-          path{
-              @include iconHeart;
-          }
+      cursor: pointer;
+
+      svg {
+        path {
+          @include iconHeart;
+        }
       }
     }
   }
 }
 .menu {
   background-color: $bg-color-lighter;
-  padding-bottom: 5%;
   @include padding-h-5;
+  padding-bottom: 5%;
+  padding-top: 2rem;
+  position: relative;
 
   h2 {
     position: relative;
@@ -59,6 +134,35 @@
       content: "";
       border-top: 3px solid $tertiary;
     }
+  }
+  &::before {
+    @include breakpoint(laptop) {
+      content: "";
+      background: url("../../public/img/ohmyfood-bg.svg") no-repeat bottom right;
+      position: absolute;
+      bottom: 10%;
+      right: 0;
+      left: 0;
+      top: 0;
+      opacity: 0.05;
+      background-size: 50%;
+    }
+  }
+  @include breakpoint(laptop) {
+    @include flexbox;
+    @include flex-flow(row wrap);
+    gap: 2rem;
+  }
+  &__starters,
+  &__main-courses,
+  &__desserts,
+  &__order {
+    @include breakpoint(laptop) {
+      width: calc(1 / 2 * 100% - 1rem);
+    }
+  }
+  &__order {
+    width: 100%;
   }
   .starter,
   .main-course,
