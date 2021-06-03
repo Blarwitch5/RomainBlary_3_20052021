@@ -425,7 +425,7 @@ select {
   padding-left: 1.875rem;
   position: relative;
   font-weight: 300;
-  transition: color 0.3s ease-in;
+  transition: all 300ms ease-in 0ms;
 }
 .footer__list .footer__item .footer__link:hover {
   color: #ff79da;
@@ -776,7 +776,7 @@ select {
   background-image: #ff79da;
   background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
   z-index: -1;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 300ms ease-in 0ms;
   opacity: 0;
   border-radius: 1.563rem;
 }
@@ -863,7 +863,7 @@ select {
   border-radius: 1rem;
   counter-increment: section;
   margin-bottom: 1.563rem;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 300ms ease-in 0ms;
   opacity: 0;
   animation: fadeIn 800ms ease-in-out forwards;
 }
@@ -888,7 +888,7 @@ select {
   background-color: #f2eafb;
 }
 .content .process__list .process__item:hover .process__icon {
-  transition: background-color 0.3s ease-in;
+  transition: background-color 300ms ease-in 0ms;
 }
 .content .process__list .process__item:hover .process__icon svg {
   color: #9356dc;
@@ -1169,6 +1169,8 @@ select {
   opacity: 0;
   animation: fadeIn 800ms ease-in-out forwards;
   overflow: hidden;
+  cursor: pointer;
+  transition: all 1s ease-in-out 0ms;
 }
 .menu .starter:nth-child(2),
 .menu .main-course:nth-child(2),
@@ -1201,6 +1203,7 @@ select {
   flex-grow: 1;
   white-space: nowrap;
   overflow: hidden;
+  width: 90%;
 }
 .menu .starter__ingredients,
 .menu .main-course__ingredients,
@@ -1220,12 +1223,121 @@ select {
 .menu .main-course__price,
 .menu .dessert__price {
   display: flex;
+  justify-content: flex-end;
+  position: relative;
+  transform: translateX(0%);
+  width: 20%;
+  transition: all 0.5s ease-in-out 0ms;
 }
 .menu .starter__price span,
 .menu .main-course__price span,
 .menu .dessert__price span {
   align-self: flex-end;
   padding-left: 1rem;
+}
+.menu .starter__validation,
+.menu .main-course__validation,
+.menu .dessert__validation {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(0%);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 20%;
+  background-color: #99e2d0;
+  border-top-right-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  transition: all 500ms ease-in-out 0ms;
+}
+.menu .starter__validation .icon-check,
+.menu .main-course__validation .icon-check,
+.menu .dessert__validation .icon-check {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  transform: translate(0%, -50%);
+  transition: all 500ms ease-in-out 100ms;
+}
+.menu .starter__validation .icon-check svg,
+.menu .main-course__validation .icon-check svg,
+.menu .dessert__validation .icon-check svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  color: #99e2d0;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+}
+.menu .starter:hover .starter__validation,
+.menu .starter:hover .main-course__validation,
+.menu .starter:hover .dessert__validation,
+.menu .main-course:hover .starter__validation,
+.menu .main-course:hover .main-course__validation,
+.menu .main-course:hover .dessert__validation,
+.menu .dessert:hover .starter__validation,
+.menu .dessert:hover .main-course__validation,
+.menu .dessert:hover .dessert__validation {
+  transition: all 500ms ease-in-out 0ms;
+  transform: translateX(-100%);
+}
+.menu .starter:hover .starter__validation .icon-check,
+.menu .starter:hover .main-course__validation .icon-check,
+.menu .starter:hover .dessert__validation .icon-check,
+.menu .main-course:hover .starter__validation .icon-check,
+.menu .main-course:hover .main-course__validation .icon-check,
+.menu .main-course:hover .dessert__validation .icon-check,
+.menu .dessert:hover .starter__validation .icon-check,
+.menu .dessert:hover .main-course__validation .icon-check,
+.menu .dessert:hover .dessert__validation .icon-check {
+  transition: all 500ms ease-in-out 100ms;
+  transform: translate(-50%, -50%);
+}
+.menu .starter:hover .starter__validation .icon-check svg,
+.menu .starter:hover .main-course__validation .icon-check svg,
+.menu .starter:hover .dessert__validation .icon-check svg,
+.menu .main-course:hover .starter__validation .icon-check svg,
+.menu .main-course:hover .main-course__validation .icon-check svg,
+.menu .main-course:hover .dessert__validation .icon-check svg,
+.menu .dessert:hover .starter__validation .icon-check svg,
+.menu .dessert:hover .main-course__validation .icon-check svg,
+.menu .dessert:hover .dessert__validation .icon-check svg {
+  transition: all 500ms ease-in-out 50ms;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(360deg);
+}
+.menu .starter:hover .starter__price,
+.menu .starter:hover .main-course__price,
+.menu .starter:hover .dessert__price,
+.menu .main-course:hover .starter__price,
+.menu .main-course:hover .main-course__price,
+.menu .main-course:hover .dessert__price,
+.menu .dessert:hover .starter__price,
+.menu .dessert:hover .main-course__price,
+.menu .dessert:hover .dessert__price {
+  transition: all 500ms ease-in-out 0ms;
+  transform: translateX(-150%);
+}
+.menu .starter:hover .starter__details,
+.menu .starter:hover .main-course__details,
+.menu .starter:hover .dessert__details,
+.menu .main-course:hover .starter__details,
+.menu .main-course:hover .main-course__details,
+.menu .main-course:hover .dessert__details,
+.menu .dessert:hover .starter__details,
+.menu .dessert:hover .main-course__details,
+.menu .dessert:hover .dessert__details {
+  margin-right: 25%;
 }
 .menu__order {
   text-align: center;
@@ -1254,37 +1366,11 @@ select {
   background-image: #ff79da;
   background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
   z-index: -1;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 300ms ease-in 0ms;
   opacity: 0;
   border-radius: 1.563rem;
 }
 .menu__order button:hover::before, .menu__order button:focus::before, .menu__order button:active::before {
-  opacity: 1;
-}
-.menu__validation {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 20%;
-  background-color: #99e2d0;
-  opacity: 0;
-}
-.menu__validation svg {
-  background-color: #fff;
-  border-radius: 1rem;
-  color: #99e2d0;
-  font-size: 1.5rem;
-}
-.menu:hover {
-  transition: all 0.5s ease-in;
-}
-.menu:hover__validation {
-  left: 80%;
   opacity: 1;
 }
 

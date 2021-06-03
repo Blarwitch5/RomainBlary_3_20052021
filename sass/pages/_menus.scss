@@ -175,10 +175,10 @@
     @include flexbox;
     @include flex-flow(row nowrap);
     position: relative;
-    // animation: fadeIn 800ms ease-in-out forwards;
-    // opacity: 0;
     @include delayedEntrance;
     overflow: hidden;
+    cursor: pointer;
+    @include customTransition(all, 1s, ease-in-out, 0ms);
 
     &:nth-child(2) {
       animation-delay: 200ms;
@@ -200,6 +200,7 @@
       @include flex-grow(1);
       white-space: nowrap;
       overflow: hidden;
+      width: 90%;
     }
     &__ingredients {
       font-weight: 300;
@@ -213,9 +214,79 @@
     }
     &__price {
       @include flexbox;
+      @include justify-content(flex-end);
+      position: relative;
+      transform: translateX(0%);
+      width: 20%;
+      @include customTransition(all, 0.5s, ease-in-out, 0ms);
+
       span {
         @include align-self(flex-end);
         padding-left: 1rem;
+      }
+    }
+    &__validation {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: translateX(0%);
+      margin-top: 0;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      height: 100%;
+      width: 20%;
+      background-color: $tertiary;
+      border-top-right-radius: 1.25rem;
+      border-bottom-right-radius: 1.25rem;
+      @include customTransition(all, 500ms, ease-in-out, 0ms);
+
+      .icon-check {
+        background-color: $white;
+        @include center(both);
+        width: 2rem;
+        height: 2rem;
+        @include border-radius-all;
+        transform: translate(0%, -50%);
+        @include customTransition(all, 500ms, ease-in-out, 100ms);
+
+        svg {
+          @include center(both);
+          border-radius: 1rem;
+          color: $tertiary;
+          font-size: 1.5rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+
+    &:hover {
+      .starter__validation,
+      .main-course__validation,
+      .dessert__validation {
+        @include customTransition(all, 500ms, ease-in-out, 0ms);
+        transform: translateX(-100%);
+
+        .icon-check {
+            @include customTransition(all, 500ms, ease-in-out, 100ms);
+            transform: translate(-50%, -50%);
+          svg {
+            @include customTransition(all, 500ms, ease-in-out, 50ms);
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
+        }
+      }
+      .starter__price,
+      .main-course__price,
+      .dessert__price {
+        @include customTransition(all, 500ms, ease-in-out, 0ms);
+        transform: translateX(-150%);
+      }
+      .starter__details,
+      .main-course__details,
+      .dessert__details {
+        margin-right: 25%;
       }
     }
   }
@@ -225,34 +296,6 @@
     button {
       @include gradient-btn;
       margin: 0 auto 3rem;
-    }
-  }
-  &__validation {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-top: 0;
-    @include flexbox;
-    @include align-items(center);
-    @include justify-content(center);
-    height: 100%;
-    width: 20%;
-    background-color: $tertiary;
-    opacity: 0;
-
-    svg {
-      background-color: $white;
-      border-radius: 1rem;
-      color: $tertiary;
-      font-size: 1.5rem;
-    }
-  }
-  &:hover {
-    transition: all 0.5s ease-in;
-
-    &__validation {
-      left: 80%;
-      opacity: 1;
     }
   }
 }
