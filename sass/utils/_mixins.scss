@@ -49,13 +49,12 @@
 @mixin border-radius-all {
   border-radius: 1rem;
 }
-@mixin customTransition($property, $duration, $timing, $delay){
-    transition: $property $duration $timing $delay;
-
+@mixin customTransition($property, $duration, $timing, $delay) {
+  transition: $property $duration $timing $delay;
 }
-@mixin delayedEntrance{
-    opacity: 0;
-    animation: fadeIn 800ms ease-in-out forwards;
+@mixin delayedEntrance {
+  opacity: 0;
+  animation: fadeIn 800ms ease-in-out forwards;
 }
 
 /*------ Breakpoints -----*/

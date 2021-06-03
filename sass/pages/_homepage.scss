@@ -4,7 +4,6 @@
  *
  * ========================================================================= */
 .content {
-
   .booking {
     width: 100%;
     margin: auto;
@@ -74,9 +73,9 @@
       @include padding-h-10;
       padding-top: 5%;
 
-      @include breakpoint(laptop){
+      @include breakpoint(laptop) {
         display: inline-block;
-        background-color: rgba(255,255,255,0.4);
+        background-color: rgba(255, 255, 255, 0.4);
         @include border-radius-all;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -125,10 +124,9 @@
         background: url("../../public/img/ohmyfood-bg.svg") no-repeat;
         background-position: 90% 50%;
         background-size: 50%;
-        opacity: .05;
+        opacity: 0.05;
       }
     }
-
     h3 {
       @include title(700, 3.75rem, 1.125rem);
 
@@ -139,7 +137,6 @@
         margin-bottom: 2rem;
       }
     }
-
     &__list {
       @include breakpoint(laptop) {
         @include flexbox;
@@ -176,7 +173,6 @@
             margin-bottom: unset;
           }
         }
-
         &:hover {
           background-color: lighten($primary, 35);
 
@@ -199,7 +195,6 @@
           padding: 3rem 1rem;
           @include justify-content(space-evenly);
         }
-
         &::before {
           content: counter(section);
           position: absolute;
@@ -225,7 +220,6 @@
             transform: translateX(-50%);
           }
         }
-
         & .process__icon {
           width: 2rem;
           height: 2rem;

@@ -195,7 +195,6 @@
     &:last-child {
       margin-bottom: 3rem;
     }
-
     &__details {
       @include flex-grow(1);
       white-space: nowrap;
@@ -259,7 +258,6 @@
         }
       }
     }
-
     &:hover {
       .starter__validation,
       .main-course__validation,
@@ -268,8 +266,8 @@
         transform: translateX(-100%);
 
         .icon-check {
-            @include customTransition(all, 500ms, ease-in-out, 100ms);
-            transform: translate(-50%, -50%);
+          @include customTransition(all, 500ms, ease-in-out, 100ms);
+          transform: translate(-50%, -50%);
           svg {
             @include customTransition(all, 500ms, ease-in-out, 50ms);
             transform-origin: center center;
@@ -290,7 +288,6 @@
       }
     }
   }
-
   &__order {
     text-align: center;
     button {
