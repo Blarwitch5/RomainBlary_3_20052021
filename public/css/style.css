@@ -665,14 +665,20 @@ select {
  * HOMEPAGE STYLE
  *
  * ========================================================================= */
-.booking {
+.content .booking {
   width: 100%;
   margin: auto;
   background-color: #f6f6f6;
   padding-bottom: 5%;
   text-align: center;
 }
-.booking__form {
+@media (min-width: 62rem) {
+  .content .booking {
+    background: url("../../public/img/restaurants/xlarge/a-la-francaise-xl.jpg") center center no-repeat;
+    background-size: 100%;
+  }
+}
+.content .booking__form {
   text-align: center;
   background-color: #eaeaea;
   padding-left: 10%;
@@ -682,49 +688,68 @@ select {
   text-align: center;
   position: relative;
 }
-.booking__form button {
+@media (min-width: 62rem) {
+  .content .booking__form {
+    margin: 0 auto;
+    width: 40%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
+.content .booking__form button {
   display: none;
 }
-.booking__form > span {
+.content .booking__form span {
   position: absolute;
   top: 50%;
   right: 80%;
   transform: translate(-80%, -50%);
 }
 @media (min-width: 36rem) {
-  .booking__form > span {
+  .content .booking__form span {
     right: 70%;
     transform: translate(-70%, -50%);
   }
 }
 @media (min-width: 62rem) {
-  .booking__form > span {
-    right: 63%;
-    transform: translate(-63%, -50%);
+  .content .booking__form span {
+    left: 25%;
+    transform: translateY(-50%);
   }
 }
-.booking__form input {
+.content .booking__form input {
   width: 75%;
   background-color: transparent;
   border: none;
   text-align: center;
 }
 @media (min-width: 36rem) {
-  .booking__form input {
+  .content .booking__form input {
     width: 50%;
   }
 }
 @media (min-width: 62rem) {
-  .booking__form input {
-    width: 33%;
+  .content .booking__form input {
+    width: 75%;
+    text-align: center;
   }
 }
-.booking__cta {
+.content .booking__cta {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
 }
-.booking__cta > button {
+@media (min-width: 62rem) {
+  .content .booking__cta {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 5%;
+  }
+}
+.content .booking__cta > button {
   position: relative;
   z-index: 1;
   color: #fff;
@@ -741,7 +766,7 @@ select {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-.booking__cta > button::before {
+.content .booking__cta > button::before {
   position: absolute;
   content: "";
   top: 0;
@@ -755,39 +780,78 @@ select {
   opacity: 0;
   border-radius: 1.563rem;
 }
-.booking__cta > button:hover::before, .booking__cta > button:focus::before, .booking__cta > button:active::before {
+.content .booking__cta > button:hover::before, .content .booking__cta > button:focus::before, .content .booking__cta > button:active::before {
   opacity: 1;
 }
-.booking__cta > h2 {
+@media (min-width: 62rem) {
+  .content .booking__cta > button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.content .booking__cta > h2 {
   font-weight: 700;
   line-height: 1.5rem;
   font-size: 1.125rem;
   margin: 1rem auto;
 }
-.booking__cta > h3 {
+@media (min-width: 62rem) {
+  .content .booking__cta > h2 {
+    font-weight: 700;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+  }
+}
+.content .booking__cta > h3 {
   font-weight: 300;
   line-height: 1.5rem;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
-
-.process {
+.content .process {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
+  position: relative;
 }
-.process h3 {
+@media (min-width: 62rem) {
+  .content .process::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("../../public/img/ohmyfood-bg.svg") no-repeat;
+    background-position: 90% 50%;
+    background-size: 50%;
+    opacity: 0.05;
+  }
+}
+.content .process h3 {
   font-weight: 700;
   line-height: 3.75rem;
   font-size: 1.125rem;
 }
 @media (min-width: 48rem) {
-  .process h3 {
+  .content .process h3 {
     text-align: center;
   }
 }
-.process__list .process__item {
+@media (min-width: 62rem) {
+  .content .process h3 {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 62rem) {
+  .content .process__list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+}
+.content .process__list .process__item {
   background-color: #f6f6f6;
   position: relative;
   display: flex;
@@ -803,35 +867,48 @@ select {
   opacity: 0;
   animation: fadeIn 800ms ease-in-out forwards;
 }
-.process__list .process__item:first-child {
+.content .process__list .process__item:first-child {
   animation-delay: 200ms;
 }
-.process__list .process__item:nth-child(2) {
+.content .process__list .process__item:nth-child(2) {
   animation-delay: 400ms;
 }
-.process__list .process__item:nth-child(3) {
+.content .process__list .process__item:nth-child(3) {
   animation-delay: 600ms;
 }
-.process__list .process__item:last-child {
+.content .process__list .process__item:last-child {
   margin-bottom: 3rem;
 }
-.process__list .process__item:hover {
+@media (min-width: 62rem) {
+  .content .process__list .process__item:last-child {
+    margin-bottom: unset;
+  }
+}
+.content .process__list .process__item:hover {
   background-color: #f2eafb;
 }
-.process__list .process__item:hover .process__icon {
+.content .process__list .process__item:hover .process__icon {
   transition: background-color 0.3s ease-in;
 }
-.process__list .process__item:hover .process__icon svg {
+.content .process__list .process__item:hover .process__icon svg {
   color: #9356dc;
 }
 @media (min-width: 48rem) {
-  .process__list .process__item {
+  .content .process__list .process__item {
     justify-content: center;
     margin: 0 auto 1.563rem;
     width: 67%;
   }
 }
-.process__list .process__item::before {
+@media (min-width: 62rem) {
+  .content .process__list .process__item {
+    margin-bottom: unset;
+    line-height: unset;
+    padding: 3rem 1rem;
+    justify-content: space-evenly;
+  }
+}
+.content .process__list .process__item::before {
   content: counter(section);
   position: absolute;
   left: -0.813rem;
@@ -846,13 +923,20 @@ select {
   font-weight: 300;
 }
 @media (min-width: 48rem) {
-  .process__list .process__item::before {
+  .content .process__list .process__item::before {
     line-height: 2.563rem;
     height: 2.563rem;
     width: 2.563rem;
   }
 }
-.process__list .process__item .process__icon {
+@media (min-width: 62rem) {
+  .content .process__list .process__item::before {
+    top: -1.2815rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.content .process__list .process__item .process__icon {
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -861,15 +945,27 @@ select {
   padding-left: 2rem;
   padding-right: 1.5rem;
 }
-.process__list .process__item .process__icon svg {
+@media (min-width: 62rem) {
+  .content .process__list .process__item .process__icon {
+    padding-left: unset;
+    padding-right: unset;
+    font-size: 2rem;
+  }
+}
+.content .process__list .process__item .process__icon svg {
   color: #7e7e7e;
   width: 2rem;
 }
-
-.restaurants {
+.content .restaurants {
   padding-left: 10%;
   padding-right: 10%;
   background-color: #f6f6f6;
+}
+@media (min-width: 62rem) {
+  .content .restaurants {
+    width: 100%;
+    z-index: 2;
+  }
 }
 
 /**
