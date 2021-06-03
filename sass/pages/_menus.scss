@@ -140,7 +140,7 @@
       content: "";
       background: url("../../public/img/ohmyfood-bg.svg") no-repeat bottom right;
       position: absolute;
-      bottom: 10%;
+      bottom: 5%;
       right: 0;
       left: 0;
       top: 0;
@@ -175,8 +175,9 @@
     @include flexbox;
     @include flex-flow(row nowrap);
     position: relative;
-    animation: coursesAppearance 800ms ease-in-out forwards;
-    opacity: 0;
+    // animation: fadeIn 800ms ease-in-out forwards;
+    // opacity: 0;
+    @include delayedEntrance;
     overflow: hidden;
 
     &:nth-child(2) {

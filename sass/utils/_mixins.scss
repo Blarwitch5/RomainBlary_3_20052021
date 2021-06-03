@@ -52,6 +52,10 @@
 @mixin transition($property) {
   transition: $property 0.3s ease-in;
 }
+@mixin delayedEntrance{
+    opacity: 0;
+    animation: fadeIn 800ms ease-in-out forwards;
+}
 
 /*------ Breakpoints -----*/
 @mixin breakpoint($breakpoint) {
