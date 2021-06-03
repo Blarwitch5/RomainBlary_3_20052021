@@ -158,7 +158,7 @@
         @include border-radius-all;
         counter-increment: section;
         margin-bottom: 1.563rem;
-        @include transition(background-color);
+        @include customTransition(background-color, 0.3s, ease-in, 0);
         @include delayedEntrance;
 
         &:first-child {
@@ -181,7 +181,7 @@
           background-color: lighten($primary, 35);
 
           & .process__icon {
-            @include transition(background-color);
+            @include customTransition(background-color, 0.3s, ease-in, 0);
 
             svg {
               color: $primary;

@@ -39,7 +39,7 @@
         padding-left: 1.875rem;
         position: relative;
         font-weight: 300;
-        @include transition(color);
+        @include customTransition(all, 300ms, ease-in, 0ms);
 
         &:hover {
           color: $secondary;

@@ -49,8 +49,9 @@
 @mixin border-radius-all {
   border-radius: 1rem;
 }
-@mixin transition($property) {
-  transition: $property 0.3s ease-in;
+@mixin customTransition($property, $duration, $timing, $delay){
+    transition: $property $duration $timing $delay;
+
 }
 @mixin delayedEntrance{
     opacity: 0;
