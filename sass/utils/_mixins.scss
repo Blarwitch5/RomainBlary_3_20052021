@@ -223,3 +223,32 @@
   left: 0;
   right: 0;
 }
+
+@mixin gradientText($gradient) {
+  @supports (mix-blend-mode: lighten) {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      bottom: 0;
+      left: 0;
+
+      background: unquote($gradient);
+      pointer-events: none;
+      animation: preloader 6s;
+    }
+  }
+
+  color: $black;
+  background: $white;
+  mix-blend-mode: multiply;
+
+  &::before {
+    mix-blend-mode: screen;
+  }
+}
