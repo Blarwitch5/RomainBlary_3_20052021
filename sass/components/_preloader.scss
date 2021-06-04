@@ -4,7 +4,7 @@
  *
  * ========================================================================= */
 .preloader {
-  display: none;
+  // display: none;
   //desactivation temporaire pour prod
   animation: fadeOut 1s ease 150ms forwards;
   animation-delay: 6s;
@@ -40,7 +40,7 @@
     @include justify-content(center);
     @include align-items(center);
     animation: preloader 6s;
-    color: $black;
+    color: transparent;
     background: linear-gradient(to right, $secondary, $primary 50%, $black 50%);
     -webkit-background-clip: text;
     background-clip: text;

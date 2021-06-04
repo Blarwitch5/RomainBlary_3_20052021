@@ -33,7 +33,7 @@
   }
   46% {
     background-position: 20% 50%;
-    animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+    animation-timing-function: cubic-bezier(0.25, 0, 0.25, 1);
   }
   100% {
     background-position: 0% 50%;
@@ -46,10 +46,10 @@
   }
   50% {
     fill: $primary;
-    stroke: 0%;
+    stroke-width: 0%;
   }
   100% {
     fill: $secondary;
-    stroke: 0%;
+    stroke-width: 0%;
   }
 }
