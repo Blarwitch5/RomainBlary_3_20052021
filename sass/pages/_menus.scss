@@ -200,6 +200,8 @@
       white-space: nowrap;
       overflow: hidden;
       width: 90%;
+      margin-right: 0;
+      @include customTransition(all, 0.5s, ease-in-out, 0ms);
     }
     &__ingredients {
       font-weight: 300;
