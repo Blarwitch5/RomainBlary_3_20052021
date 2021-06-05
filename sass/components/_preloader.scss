@@ -4,8 +4,10 @@
  *
  * ========================================================================= */
 .preloader {
+  
   // display: none;
-  //desactivation temporaire pour prod
+  //desactivation pour prod
+
   animation: fadeOut 1s ease 150ms forwards;
   animation-delay: 6s;
   position: fixed;
@@ -40,15 +42,6 @@
     @include justify-content(center);
     @include align-items(center);
     overflow: hidden;
-    // animation: preloader 6s;
-    // color: $black;
-    // background: linear-gradient(to right, $secondary, $primary 50%, $black 50%);
-    // -webkit-background-clip: text;
-    // background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // background-size: 200% 100%;
-    // background-position: 100%;
-    // position: relative;
     @include gradientText(linear-gradient(to right, $secondary, $primary));
 
     @include breakpoint(phablet) {
