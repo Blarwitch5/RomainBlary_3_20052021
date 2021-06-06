@@ -96,7 +96,7 @@
   stroke: $black;
   fill: transparent;
 
-  &:hover {
+  &:hover, &:active {
     stroke-width: 0%;
     animation: iconHeart 500ms forwards;
   }

@@ -29,6 +29,7 @@
     @include customTransition(opacity, 300ms, ease-in, 0ms);
     opacity: 0;
     border-radius: 1.563rem;
+    @include box-shadow;
   }
   &:hover,
   &:focus,

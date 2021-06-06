@@ -623,7 +623,7 @@ select {
   stroke: #000;
   fill: transparent;
 }
-.restaurants__layout .restaurant__infogroup .restaurant__like svg path:hover {
+.restaurants__layout .restaurant__infogroup .restaurant__like svg path:hover, .restaurants__layout .restaurant__infogroup .restaurant__like svg path:active {
   stroke-width: 0%;
   animation: iconHeart 500ms forwards;
 }
@@ -789,6 +789,7 @@ select {
   transition: opacity 300ms ease-in 0ms;
   opacity: 0;
   border-radius: 1.563rem;
+  box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
 }
 .content .booking__cta > button:hover::before, .content .booking__cta > button:focus::before, .content .booking__cta > button:active::before {
   opacity: 1;
@@ -1111,7 +1112,7 @@ select {
   stroke: #000;
   fill: transparent;
 }
-.hero__page-title .hero__like svg path:hover {
+.hero__page-title .hero__like svg path:hover, .hero__page-title .hero__like svg path:active {
   stroke-width: 0%;
   animation: iconHeart 500ms forwards;
 }
@@ -1382,6 +1383,7 @@ select {
   transition: opacity 300ms ease-in 0ms;
   opacity: 0;
   border-radius: 1.563rem;
+  box-shadow: 0px 5px 11px -6px rgba(0, 0, 0, 0.5);
 }
 .menu__order button:hover::before, .menu__order button:focus::before, .menu__order button:active::before {
   opacity: 1;
