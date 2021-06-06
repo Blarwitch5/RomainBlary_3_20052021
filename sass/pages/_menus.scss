@@ -5,61 +5,61 @@
  * ========================================================================= */
 .page-menu-alafrancaise {
   .hero {
-    @include heroImg("../../public/img/restaurants/small/a-la-francaise.jpg", top);
+    @include heroImg("../../../public/img/restaurants/small/a-la-francaise.jpg", top);
 
     @include breakpoint(phablet) {
-      @include heroImg("../../public/img/restaurants/medium/a-la-francaise-md.jpg", center);
+      @include heroImg("../../../public/img/restaurants/medium/a-la-francaise-md.jpg", center);
     }
     @include breakpoint(tablet) {
-      @include heroImg("../../public/img/restaurants/large/a-la-francaise-lg.jpg", center);
+      @include heroImg("../../../public/img/restaurants/large/a-la-francaise-lg.jpg", center);
     }
     @include breakpoint(l_desktop) {
-      @include heroImg("../../public/img/restaurants/xlarge/a-la-francaise-xl.jpg", center);
+      @include heroImg("../../../public/img/restaurants/xlarge/a-la-francaise-xl.jpg", center);
     }
   }
 }
 .page-menu-lapalettedugout {
   .hero {
-    @include heroImg("../../public/img/restaurants/small/la-palette-du-gout.jpg", top);
+    @include heroImg("../../../public/img/restaurants/small/la-palette-du-gout.jpg", top);
 
     @include breakpoint(phablet) {
-      @include heroImg("../../public/img/restaurants/medium/la-palette-du-gout-md.jpg", center);
+      @include heroImg("../../../public/img/restaurants/medium/la-palette-du-gout-md.jpg", center);
     }
     @include breakpoint(tablet) {
-      @include heroImg("../../public/img/restaurants/large/la-palette-du-gout-lg.jpg", center);
+      @include heroImg("../../../public/img/restaurants/large/la-palette-du-gout-lg.jpg", center);
     }
     @include breakpoint(l_desktop) {
-      @include heroImg("../../public/img/restaurants/xlarge/la-palette-du-gout-xl.jpg", center);
+      @include heroImg("../../../public/img/restaurants/xlarge/la-palette-du-gout-xl.jpg", center);
     }
   }
 }
 .page-menu-lanoteenchantee {
   .hero {
-    @include heroImg("../../public/img/restaurants/small/la-note-enchantee.jpg", top);
+    @include heroImg("../../../public/img/restaurants/small/la-note-enchantee.jpg", top);
 
     @include breakpoint(phablet) {
-      @include heroImg("../../public/img/restaurants/medium/la-note-enchantee-md.jpg", center);
+      @include heroImg("../../../public/img/restaurants/medium/la-note-enchantee-md.jpg", center);
     }
     @include breakpoint(tablet) {
-      @include heroImg("../../public/img/restaurants/large/la-note-enchantee-lg.jpg", center);
+      @include heroImg("../../../public/img/restaurants/large/la-note-enchantee-lg.jpg", center);
     }
     @include breakpoint(l_desktop) {
-      @include heroImg("../../public/img/restaurants/xlarge/la-note-enchantee-xl.jpg", center);
+      @include heroImg("../../../public/img/restaurants/xlarge/la-note-enchantee-xl.jpg", center);
     }
   }
 }
 .page-menu-ledelicedessens {
   .hero {
-    @include heroImg("../../public/img/restaurants/small/le-delice-des-sens.jpg", top);
+    @include heroImg("../../../public/img/restaurants/small/le-delice-des-sens.jpg", top);
 
     @include breakpoint(phablet) {
-      @include heroImg("../../public/img/restaurants/medium/le-delice-des-sens-md.jpg", bottom);
+      @include heroImg("../../../public/img/restaurants/medium/le-delice-des-sens-md.jpg", bottom);
     }
     @include breakpoint(tablet) {
-      @include heroImg("../../public/img/restaurants/large/le-delice-des-sens-lg.jpg", bottom);
+      @include heroImg("../../../public/img/restaurants/large/le-delice-des-sens-lg.jpg", bottom);
     }
     @include breakpoint(l_desktop) {
-      @include heroImg("../../public/img/restaurants/xlarge/le-delice-des-sens-xl.jpg", bottom);
+      @include heroImg("../../../public/img/restaurants/xlarge/le-delice-des-sens-xl.jpg", bottom);
     }
   }
 }
@@ -104,6 +104,7 @@
     .hero__like {
       font-size: 1.5rem;
       cursor: pointer;
+      z-index: 9;
 
       svg {
         path {
@@ -138,7 +139,7 @@
   &::before {
     @include breakpoint(laptop) {
       content: "";
-      background: url("../../public/img/ohmyfood-bg.svg") no-repeat bottom right;
+      background: url("../../../public/img/ohmyfood-bg.svg") no-repeat bottom right;
       position: absolute;
       bottom: 5%;
       right: 0;
