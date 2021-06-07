@@ -260,7 +260,6 @@ select {
  *
  * ========================================================================= */
 .preloader {
-  display: none;
   animation: fadeOut 1s ease 150ms forwards;
   animation-delay: 6s;
   position: fixed;
