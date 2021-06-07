@@ -108,6 +108,7 @@
 
       svg {
         path {
+          z-index: 9999;
           @include iconHeart;
         }
       }
