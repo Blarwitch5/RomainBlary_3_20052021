@@ -527,6 +527,16 @@ select {
 }
 .restaurants__layout .restaurant__link {
   text-decoration: none;
+  position: relative;
+}
+.restaurants__layout .restaurant__link::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  cursor: pointer;
 }
 .restaurants__layout .restaurant__link:hover .restaurant__img::after {
   opacity: 0.2;
