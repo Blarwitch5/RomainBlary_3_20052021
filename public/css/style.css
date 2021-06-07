@@ -260,6 +260,7 @@ select {
  *
  * ========================================================================= */
 .preloader {
+  display: none;
   animation: fadeOut 1s ease 150ms forwards;
   animation-delay: 6s;
   position: fixed;
@@ -1182,27 +1183,27 @@ select {
   animation: fadeIn 800ms ease-in-out forwards;
   overflow: hidden;
   cursor: pointer;
-  transition: all 1s ease-in-out 0ms;
+  transition: all 1000ms ease-in-out 6000ms;
 }
 .menu .starter:nth-child(2),
 .menu .main-course:nth-child(2),
 .menu .dessert:nth-child(2) {
-  animation-delay: 200ms;
+  animation-delay: 6200ms;
 }
 .menu .starter:nth-child(3),
 .menu .main-course:nth-child(3),
 .menu .dessert:nth-child(3) {
-  animation-delay: 400ms;
+  animation-delay: 6400ms;
 }
 .menu .starter:nth-child(4),
 .menu .main-course:nth-child(4),
 .menu .dessert:nth-child(4) {
-  animation-delay: 600ms;
+  animation-delay: 6600ms;
 }
 .menu .starter:nth-child(5),
 .menu .main-course:nth-child(5),
 .menu .dessert:nth-child(5) {
-  animation-delay: 800ms;
+  animation-delay: 6800ms;
 }
 .menu .starter:last-child,
 .menu .main-course:last-child,
@@ -1217,7 +1218,7 @@ select {
   overflow: hidden;
   width: 90%;
   margin-right: 0;
-  transition: all 0.5s ease-in-out 0ms;
+  transition: all 500ms ease-in-out 0ms;
 }
 .menu .starter__ingredients,
 .menu .main-course__ingredients,
@@ -1241,7 +1242,7 @@ select {
   position: relative;
   transform: translateX(0%);
   width: 20%;
-  transition: all 0.5s ease-in-out 0ms;
+  transition: all 500ms ease-in-out 0ms;
 }
 .menu .starter__price span,
 .menu .main-course__price span,
@@ -1292,6 +1293,8 @@ select {
   color: #99e2d0;
   font-size: 1.5rem;
   padding: 0.3rem;
+  transform: translate(0%, -50%) rotate(0deg);
+  transition: all 500ms ease-in-out 50ms;
 }
 .menu .starter:hover .starter__validation,
 .menu .starter:hover .main-course__validation,
@@ -1339,7 +1342,7 @@ select {
 .menu .dessert:hover .starter__price,
 .menu .dessert:hover .main-course__price,
 .menu .dessert:hover .dessert__price {
-  transition: all 500ms ease-in-out 0ms;
+  transition: all 500ms ease-in-out 0.1ms;
   transform: translateX(-150%);
 }
 .menu .starter:hover .starter__details,
