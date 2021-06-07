@@ -622,6 +622,7 @@ select {
   stroke-width: 10%;
   stroke: #000;
   fill: transparent;
+  z-index: 9999;
 }
 .restaurants__layout .restaurant__infogroup .restaurant__like svg path:hover, .restaurants__layout .restaurant__infogroup .restaurant__like svg path:active {
   stroke-width: 0%;
@@ -1108,10 +1109,10 @@ select {
   z-index: 9;
 }
 .hero__page-title .hero__like svg path {
-  z-index: 9999;
   stroke-width: 10%;
   stroke: #000;
   fill: transparent;
+  z-index: 9999;
 }
 .hero__page-title .hero__like svg path:hover, .hero__page-title .hero__like svg path:active {
   stroke-width: 0%;

@@ -95,6 +95,7 @@
   stroke-width: 10%;
   stroke: $black;
   fill: transparent;
+  z-index: 9999;
 
   &:hover, &:active {
     stroke-width: 0%;
