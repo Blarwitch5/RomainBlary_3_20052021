@@ -73,11 +73,12 @@
 
       @include breakpoint(laptop) {
         display: inline-block;
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.6);
         @include border-radius-all;
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin-top: 5%;
+        max-width: 50%
       }
 
       & > button {
@@ -97,12 +98,17 @@
         margin: 1rem auto;
 
         @include breakpoint(laptop) {
-          @include title(700, 1.8rem, 1.4rem);
+          @include title(700, 1.8rem, 1.6rem);
         }
       }
       & > h3 {
         @include title(300, 1.5rem, 1rem);
         margin-bottom: 1rem;
+
+        @include breakpoint(laptop) {
+          @include title(300, 1.5rem, 1.2rem);
+          margin-bottom: 0;
+        }
       }
     }
   }
