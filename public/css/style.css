@@ -789,6 +789,7 @@ select {
   margin-bottom: 5%;
 }
 .content .booking__cta > button::before {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1393,6 +1394,7 @@ select {
   margin: 0 auto 3rem;
 }
 .menu__order button::before {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;

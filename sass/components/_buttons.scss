@@ -17,6 +17,7 @@
   @include gradient($secondary, $primary, 173deg);
 
   &::before {
+    content: "";
     @include full-absolute-overlay;
     background: $secondary;
     @include gradient($primary, $secondary, 173deg);
