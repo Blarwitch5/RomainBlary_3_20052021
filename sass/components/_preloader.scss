@@ -9,7 +9,7 @@
   //desactivation pour prod
 
   animation: fadeOut 1s ease 150ms forwards;
-  animation-delay: 6s;
+  animation-delay: 3s;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,11 +20,7 @@
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    @include full-absolute-overlay;
     z-index: 999;
     background-image: url("../../../public/img/ohmyfood-bg.svg");
     background-position: center center;

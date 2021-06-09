@@ -261,7 +261,7 @@ select {
  * ========================================================================= */
 .preloader {
   animation: fadeOut 1s ease 150ms forwards;
-  animation-delay: 6s;
+  animation-delay: 3s;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -317,7 +317,7 @@ select {
     left: 0;
     background: linear-gradient(to right, #ff79da, #9356dc);
     pointer-events: none;
-    animation: preloader 6s;
+    animation: preloader 3s;
   }
 }
 .preloader__text::before {
@@ -532,9 +532,9 @@ select {
 .restaurants__layout .restaurant__link::before {
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: 999;
   cursor: pointer;
 }
@@ -790,11 +790,10 @@ select {
 }
 .content .booking__cta > button::before {
   position: absolute;
-  content: "";
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
+  right: 0;
   background: #ff79da;
   background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
   z-index: -1;
@@ -1203,27 +1202,27 @@ select {
   animation: fadeIn 800ms ease-in-out forwards;
   overflow: hidden;
   cursor: pointer;
-  transition: all 1000ms ease-in-out 6000ms;
+  transition: all 1000ms ease-in-out 0ms;
 }
 .menu .starter:nth-child(2),
 .menu .main-course:nth-child(2),
 .menu .dessert:nth-child(2) {
-  animation-delay: 6200ms;
+  animation-delay: 200ms;
 }
 .menu .starter:nth-child(3),
 .menu .main-course:nth-child(3),
 .menu .dessert:nth-child(3) {
-  animation-delay: 6400ms;
+  animation-delay: 400ms;
 }
 .menu .starter:nth-child(4),
 .menu .main-course:nth-child(4),
 .menu .dessert:nth-child(4) {
-  animation-delay: 6600ms;
+  animation-delay: 600ms;
 }
 .menu .starter:nth-child(5),
 .menu .main-course:nth-child(5),
 .menu .dessert:nth-child(5) {
-  animation-delay: 6800ms;
+  animation-delay: 800ms;
 }
 .menu .starter:last-child,
 .menu .main-course:last-child,
@@ -1395,11 +1394,10 @@ select {
 }
 .menu__order button::before {
   position: absolute;
-  content: "";
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
+  right: 0;
   background: #ff79da;
   background-image: linear-gradient(173deg, #9356dc 0%, #ff79da 66%);
   z-index: -1;
