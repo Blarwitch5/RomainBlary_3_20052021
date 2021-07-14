@@ -1,11 +1,8 @@
 
  # ![Logo Ohmyfood!](https://github.com/Blarwitch5/RomainBlary_3_20052021/blob/main/public/img/ohmyfood.png?raw=true)
 
-Création du site Ohmyfood! Paris
+Création du site Ohmyfood! Paris : [Demo](https://blarwitch5.github.io/RomainBlary_3_20052021/)
 
----
-[Démo here](https://blarwitch5.github.io/RomainBlary_3_20052021/)
----
 
 ![Maquettes ohmyfood!](https://github.com/Blarwitch5/RomainBlary_3_20052021/blob/main/mockup/maquettes.jpg?raw=true)
 
