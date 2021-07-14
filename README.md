@@ -4,9 +4,7 @@
 Création du site Ohmyfood! Paris
 
 ---
----
 [Démo here](https://blarwitch5.github.io/RomainBlary_3_20052021/)
----
 ---
 
 ![Maquettes ohmyfood!](https://github.com/Blarwitch5/RomainBlary_3_20052021/blob/main/mockup/maquettes.jpg?raw=true)
